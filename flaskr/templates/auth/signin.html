@@ -22,7 +22,33 @@
         </div>
       </div>
       <div>
-        <div class="home__forms"></div>
+        <div class="home__forms">
+          <div class="home__forms-container">
+            <form action="" method="POST" class="home__form">
+              <div class="home__form-header">
+                <h1>Sign In</h1>
+              </div>
+              {{ form.hidden_tag() }}
+              <div class="home__form-inputs">
+                {{ form.username.label(class_='home__form-label') }}
+                {{ form.username(class_='home__form-input',
+                                  autocomplete='off') }}
+              </div>
+              <div class="home__form-inputs">
+                {{ form.password.label(class_='home__form-label') }}
+                {{ form.password(class_='home__form-input',
+                                  autocomplete='off') }}
+              </div>
+              <div class="home__form-inputs">
+                {{ form.remember_me(class_='home__form-remember') }}
+                {{ form.remember_me.label(class_='home__form-label') }}
+              </div>
+              <div class="home__form-btns">
+                {{ form.submit(class_='home__form-btn') }}
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </section>

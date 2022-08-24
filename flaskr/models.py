@@ -1,5 +1,5 @@
 from flask_login import UserMixin
-from flaskr import db
+from flaskr import db, login_manager
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
@@ -24,3 +24,7 @@ class User(UserMixin, db.Model):
                 Email: {self.email}
         """
 
+
+@login_manager.user_loader
+def load_user(id):
+    return User.query.get(int(id))

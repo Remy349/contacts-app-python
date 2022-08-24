@@ -1,3 +1,3 @@
-# ContactsApp
+# ContactsApp with Python and Flask
 
 ## In progress...

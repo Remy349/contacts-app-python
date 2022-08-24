@@ -1,17 +1,34 @@
 from flask import Flask
 from config import Config
 from flask_login import LoginManager
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 login_manager = LoginManager()
+db = SQLAlchemy()
+migrate = Migrate()
 
 login_manager.login_view = "auth.signin"
 login_manager.login_message = "Please sign in to access the principal page!"
 
 def create_app(config_class=Config):
     app = Flask(__name__)
+
+    if config_class.SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
+        config_class.SQLALCHEMY_DATABASE_URI = config_class.SQLALCHEMY_DATABASE_URI.replace(
+            "postgres://", "postgresql://", 1
+        )
+
+    if not config_class.SQLALCHEMY_DATABASE_URI:
+        raise RuntimeError("DATABASE_URI is not set!")
+    else:
+        print("DATABASE_URI is ok!!!")
+
     app.config.from_object(config_class)
 
     login_manager.init_app(app)
+    db.init_app(app)
+    migrate.init_app(app, db)
 
     from flaskr.main import bp as main_bp
     app.register_blueprint(main_bp)
@@ -20,3 +37,6 @@ def create_app(config_class=Config):
     app.register_blueprint(auth_bp, url_prefix="/auth")
 
     return app
+
+
+from flaskr import models

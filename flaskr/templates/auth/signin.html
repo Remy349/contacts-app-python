@@ -2,7 +2,7 @@
 
 {% block content %}
   <section class="home">
-    <div class="home__container container">
+    <div class="home__container container grid">
       <div>
         <div class="home__content">
           <div class="home__content-container">
@@ -24,9 +24,9 @@
       <div>
         <div class="home__forms">
           <div class="home__forms-container">
-            <form action="" method="POST" class="home__form">
+            <form action="" method="POST" class="home__form grid">
               <div class="home__form-header">
-                <h1>Sign In</h1>
+                <h3>Sign In</h3>
               </div>
               {{ form.hidden_tag() }}
               <div class="home__form-inputs">

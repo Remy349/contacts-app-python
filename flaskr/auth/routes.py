@@ -30,8 +30,7 @@ def signin():
 
         return redirect(next_page)
 
-    return render_template("auth/signin.html", title="Sign In",
-                           form=form)
+    return render_template("auth/signin.html", form=form)
 
 
 @bp.route("/logout")

@@ -3,7 +3,38 @@
 {% block content %}
   <section class="signup">
     <div class="signup__container container">
-      <h1>Sign Up Form!</h1>
+      <div class="signup__forms">
+        <div class="signup__forms-container">
+          <form action="" method="POST" class="signup__form grid">
+            <div class="signup__form-header">
+              <h3>Sign Up</h3>
+            </div>
+            <div class="signup__form-inputs">
+              {{ form.username.label(class_='signup__form-label') }}
+              {{ form.username(class_='signup__form-input',
+                                autocomplete='off') }}
+            </div>
+            <div class="signup__form-inputs">
+              {{ form.email.label(class_='signup__form-label') }}
+              {{ form.email(class_='signup__form-input',
+                                autocomplete='off') }}
+            </div>
+            <div class="signup__form-inputs">
+              {{ form.password.label(class_='signup__form-label') }}
+              {{ form.password(class_='signup__form-input',
+                                autocomplete='off') }}
+            </div>
+            <div class="signup__form-inputs">
+              {{ form.password_again.label(class_='signup__form-label') }}
+              {{ form.password_again(class_='signup__form-input',
+                                autocomplete='off') }}
+            </div>
+            <div class="signup__form-btns">
+              {{ form.submit(class_='signup__form-btn') }}
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 {% endblock content %}

@@ -1,5 +1,62 @@
+/* IMPORTS */
+/* SIGN UP */
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+/* IMPORTS */
+.signup {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.signup__form {
+  background-color: #F3F9FB;
+  border-radius: 0.5rem;
+  padding: 3rem 2rem;
+  row-gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+.signup__form-header {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #113F67;
+}
+.signup__form-inputs {
+  background-color: #226597;
+  display: grid;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  row-gap: 0.5rem;
+}
+.signup__form-label {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.signup__form-input {
+  background-color: #226597;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #fff;
+}
+.signup__form-btn {
+  background-color: #113F67;
+  color: #F3F9FB;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  padding: 0.7rem 0;
+  font-size: 1.2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.signup__form-btn:hover {
+  background-color: #226597;
+}
+
 /* BASE */
 * {
   margin: 0;
@@ -62,7 +119,7 @@ ul {
   color: #113F67;
 }
 
-/* HOME */
+/* HOME / SIGN IN */
 .home {
   margin-top: 3rem;
   margin-bottom: 3rem;

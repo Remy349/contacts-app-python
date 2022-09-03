@@ -37,7 +37,7 @@ def signin():
 @bp.route("/sign-up", methods=["GET", "POST"])
 def signup():
     if current_user.is_authenticated:
-        return redirect(url_for("index.main"))
+        return redirect(url_for("main.index"))
 
     form = SignUpForm()
 
@@ -49,6 +49,7 @@ def signup():
         db.session.commit()
 
         flash("Congratulations, you are now a registered user!")
+
         return redirect(url_for("auth.signin"))
 
     return render_template("auth/signup.html", title="Sign Up",

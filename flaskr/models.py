@@ -9,6 +9,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(40), unique=True, index=True, nullable=False)
     email = db.Column(db.String(120), unique=True, index=True, nullable=False)
     password_hash = db.Column(db.String(130))
+    contacts = db.relationship("contact", backref="author", lazy="dynamic")
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -21,7 +22,25 @@ class User(UserMixin, db.Model):
             User:
                 Id: {self.id},
                 Username: {self.username},
-                Email: {self.email}
+                Email: {self.email},
+                Contacts: {self.contacts}
+        """
+
+
+class Contact(db.Model):
+    __tablename__ = "contact"
+    id = db.Column(db.Integer, primary_key=True)
+    contact_name = db.Column(db.String(40), nullable=False)
+    contact_phonenumber = db.Column(db.String(20), unique=True, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+    def __repr__(self):
+        return f"""
+            Contact:
+                Id: {self.id},
+                ContactName: {self.contact_name},
+                ContactPhonenumber: {self.contact_phonenumber}
+                UserId: {self.user_id}
         """
 
 

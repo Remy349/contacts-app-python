@@ -9,7 +9,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 login_manager.login_view = "auth.signin"
-login_manager.login_message = "Please sign in to access the principal page!"
+login_manager.login_message = ""
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -28,7 +28,7 @@ def create_app(config_class=Config):
 
     login_manager.init_app(app)
     db.init_app(app)
-    migrate.init_app(app, db)
+    migrate.init_app(app, db, compare_type=True)
 
     from flaskr.main import bp as main_bp
     app.register_blueprint(main_bp)

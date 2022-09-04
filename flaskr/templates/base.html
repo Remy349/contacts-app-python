@@ -10,6 +10,8 @@
       ContactsApp
     {% endif %}
   </title>
+  <!-- BOXICONS -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <!-- STYLES CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
@@ -24,6 +26,9 @@
   <main class="main">
     {% block content %} {% endblock content %}
   </main>
+
+  <!-- MAIN JS -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
 

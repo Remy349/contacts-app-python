@@ -4,6 +4,35 @@
   <section class="signup">
     <div class="signup__container container">
       <div class="signup__forms">
+        {% if form.username.errors %}
+          {% for error in form.username.errors %}
+            <div class="error__message">
+              <p class="error__message-text">{{ error }}</p>
+              <i class="bx bx-x error__message-icon"></i>
+            </div>
+          {% endfor %}
+        {% elif form.email.errors %}
+          {% for error in form.email.errors %}
+            <div class="error__message">
+              <p class="error__message-text">{{ error }}</p>
+              <i class="bx bx-x error__message-icon"></i>
+            </div>
+          {% endfor %}
+        {% elif form.password.errors %}
+          {% for error in form.password.errors %}
+            <div class="error__message">
+              <p class="error__message-text">{{ error }}</p>
+              <i class="bx bx-x error__message-icon"></i>
+            </div>
+          {% endfor %}
+        {% elif form.password_again.errors %}
+          {% for error in form.password_again.errors %}
+            <div class="error__message">
+              <p class="error__message-text">{{ error }}</p>
+              <i class="bx bx-x error__message-icon"></i>
+            </div>
+          {% endfor %}
+        {% endif %}
         <div class="signup__forms-container">
           <form action="" method="POST" class="signup__form grid">
             <div class="signup__form-header">

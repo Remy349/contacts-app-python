@@ -9,7 +9,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(40), unique=True, index=True, nullable=False)
     email = db.Column(db.String(120), unique=True, index=True, nullable=False)
     password_hash = db.Column(db.String(130))
-    contacts = db.relationship("contact", backref="author", lazy="dynamic")
+    contacts = db.relationship("Contact", backref="author", lazy="dynamic")
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)

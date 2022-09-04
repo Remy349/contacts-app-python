@@ -31,6 +31,15 @@
               <div class="home__form-header">
                 <h3>Sign In</h3>
               </div>
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                      <div class="home__form-message">
+                        {{ message }}
+                      </div>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
               {{ form.hidden_tag() }}
               <div class="home__form-inputs">
                 {{ form.username.label(class_='home__form-label') }}

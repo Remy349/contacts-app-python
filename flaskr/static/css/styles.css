@@ -30,16 +30,16 @@
 .signup__form-label {
   color: #fff;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 .signup__form-input {
-  background-color: #226597;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   border: none;
   outline: none;
   width: 100%;
-  color: #fff;
+  display: none;
 }
 .signup__form-btn {
   background-color: #113F67;
@@ -178,16 +178,16 @@ ul {
 .home__form-label {
   color: #fff;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 .home__form-input {
-  background-color: #226597;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   border: none;
   outline: none;
   width: 100%;
-  color: #fff;
+  display: none;
 }
 .home__form-message {
   color: #F32424;
@@ -246,6 +246,21 @@ ul {
 .error__message-icon {
   font-size: 2.5rem;
   cursor: pointer;
+}
+
+/* SHOW FORM INPUTS STYLE */
+.change-input-container {
+  border: 1px solid #226597;
+  background-color: #e6e6e6;
+}
+
+.show-input {
+  display: block;
+  background-color: #e6e6e6;
+}
+
+.change-label {
+  color: #226597;
 }
 
 /*# sourceMappingURL=styles.css.map */

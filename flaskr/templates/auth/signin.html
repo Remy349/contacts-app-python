@@ -41,13 +41,13 @@
                 {% endif %}
               {% endwith %}
               {{ form.hidden_tag() }}
-              <div class="home__form-inputs">
-                {{ form.username.label(class_='home__form-label') }}
+              <div class="home__form-inputs" id="usernameCont">
+                {{ form.username.label(class_='home__form-label', id="usernameLabel") }}
                 {{ form.username(class_='home__form-input',
                                   autocomplete='off') }}
               </div>
-              <div class="home__form-inputs">
-                {{ form.password.label(class_='home__form-label') }}
+              <div class="home__form-inputs" id="passwordCont">
+                {{ form.password.label(class_='home__form-label', id="passwordLabel") }}
                 {{ form.password(class_='home__form-input',
                                   autocomplete='off') }}
               </div>

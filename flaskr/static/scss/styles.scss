@@ -168,3 +168,16 @@ ul { list-style: none; }
   }
 }
 
+/* SHOW FORM INPUTS STYLE */
+.change-input-container {
+  border: 1px solid c.$second-color;
+  background-color: c.$aux-color;
+}
+
+.show-input {
+  display: block;
+  background-color: c.$aux-color;
+}
+
+.change-label { color: c.$second-color; }
+

@@ -38,23 +38,23 @@
             <div class="signup__form-header">
               <h3>Sign Up</h3>
             </div>
-            <div class="signup__form-inputs">
-              {{ form.username.label(class_='signup__form-label') }}
+            <div class="signup__form-inputs" id="usernameCont">
+              {{ form.username.label(class_='signup__form-label', id="usernameLabel") }}
               {{ form.username(class_='signup__form-input',
                                 autocomplete='off') }}
             </div>
-            <div class="signup__form-inputs">
-              {{ form.email.label(class_='signup__form-label') }}
+            <div class="signup__form-inputs" id="emailCont">
+              {{ form.email.label(class_='signup__form-label', id="emailLabel") }}
               {{ form.email(class_='signup__form-input',
                                 autocomplete='off') }}
             </div>
-            <div class="signup__form-inputs">
-              {{ form.password.label(class_='signup__form-label') }}
+            <div class="signup__form-inputs" id="passwordCont">
+              {{ form.password.label(class_='signup__form-label', id="passwordLabel") }}
               {{ form.password(class_='signup__form-input',
                                 autocomplete='off') }}
             </div>
-            <div class="signup__form-inputs">
-              {{ form.password_again.label(class_='signup__form-label') }}
+            <div class="signup__form-inputs" id="passwordAgainCont">
+              {{ form.password_again.label(class_='signup__form-label', id="passwordAgainLabel") }}
               {{ form.password_again(class_='signup__form-input',
                                 autocomplete='off') }}
             </div>

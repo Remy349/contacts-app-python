@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /* Change background color */
+  if (window.location.pathname !== "/auth/sign-in") {
+    document.body.style.background = '#F3F9FB'
+  }
+
   /* Hide error messages */
   const errorMessage = document.querySelector('.error__message')
 

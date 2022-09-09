@@ -48,8 +48,6 @@ def signup():
         db.session.add(user)
         db.session.commit()
 
-        flash("Congratulations, you are now a registered user!")
-
         return redirect(url_for("auth.signin"))
 
     return render_template("auth/signup.html", title="Sign Up",

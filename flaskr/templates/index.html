@@ -2,10 +2,30 @@
 
 {% block content %}
   <section class="principal">
-    <div class="principal__container container">
-      <div class="principal__content">
-        <h1>Home page after sign in!</h1>
+    <div class="principal__container container grid">
+      <div class="principal__profile">
+        <div class="principal__profile-image">
+          <img
+            class="principal__profile-image_img"
+            src="{{ current_user.avatar() }}"
+            alt="Profile photo"
+          />
+        </div>
+        <div class="principal__profile-info">
+          <h1 class="principal__profile-info_title">
+            Welcome, {{ current_user.username }}!
+          </h1>
+          <p>Username: {{ current_user.username }}</p>
+          <p>Email: {{ current_user.email }}</p>
+          <div class="principal__profile-info_btns">
+            <a class="principal__profile-info_btns_new">
+              New contact
+              <i class='bx bx-add-to-queue'></i>
+            </a>
+          </div>
+        </div>
       </div>
+      <div class="principal__contacts"></div>
     </div>
   </section>
 {% endblock content %}

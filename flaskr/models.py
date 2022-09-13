@@ -1,4 +1,5 @@
 from flask_login import UserMixin
+from libgravatar import Gravatar
 from flaskr import db, login_manager
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -16,6 +17,10 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def avatar(self):
+        g = Gravatar(self.email)
+        return g.get_image(default="identicon")
 
     def __repr__(self):
         return f"""

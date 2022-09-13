@@ -5,6 +5,7 @@
 
 /* SIGN UP */
 @use './signup';
+@use './index';
 
 /* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
@@ -98,6 +99,7 @@ ul { list-style: none; }
     &-btn {
       @include m.btn-style(c.$primary-color, c.$light-color);
       padding: .5rem 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.3);
 
       &:hover { background-color: c.$second-color; }
     }

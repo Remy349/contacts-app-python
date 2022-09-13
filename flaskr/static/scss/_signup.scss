@@ -8,6 +8,7 @@
 
   &__form {
     @include m.form-style(header, inputs, label, input);
+    background-color: c.$white-color;
 
     &-btn {
       @include m.btn-style(c.$primary-color, c.$light-color);

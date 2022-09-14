@@ -2,6 +2,18 @@
 
 {% block content %}
   <section class="principal">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+            <div class="principal__message container">
+              <p class="principal__message-text">
+                {{ message }}
+              </p>
+              <i class="bx bx-x principal__message-icon"></i>
+            </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
     <div class="principal__container container grid">
       <div class="principal__profile">
         <div class="principal__profile-image">

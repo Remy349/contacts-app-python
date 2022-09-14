@@ -25,14 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  /* Hide error messages */
+  /* Hide error | success messages */
   const errorMessage = document.querySelector('.error__message')
+  const successMessage = document.querySelector('.principal__message')
 
   if (errorMessage) {
     const errorMessageCloseBtn = document.querySelector('.error__message-icon')
 
     errorMessageCloseBtn.addEventListener('click', () => {
       errorMessage.style.display = 'none'
+    })
+  }
+
+  if (successMessage) {
+    const successMessageCloseBtn = document.querySelector('.principal__message-icon')
+
+    successMessageCloseBtn.addEventListener('click', () => {
+      successMessage.style.display = 'none'
     })
   }
 

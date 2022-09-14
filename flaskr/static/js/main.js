@@ -4,6 +4,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.background = '#F3F9FB'
   }
 
+  /* Validate form of new contact | Just numbers */
+  const newContactForm = document.querySelector('.new__form')
+
+  if (newContactForm) {
+    newContactForm.addEventListener('submit', (e) => {
+      const contactPhone = document.getElementById('contact_phonenumber')
+      const justNumbers = /[A-Z]/gi
+
+      if (justNumbers.test(contactPhone.value)) {
+        const contactPhoneCont = document.getElementById('contactPhoneCont')
+        const contactFormMessage = document.querySelector('.new__form-message')
+
+        contactPhoneCont.style.border = '1px solid #F32424'
+        contactFormMessage.style.display = 'block'
+        contactFormMessage.innerHTML = 'Do not enter letters!'
+
+        e.preventDefault()
+      }
+    })
+  }
+
   /* Hide error messages */
   const errorMessage = document.querySelector('.error__message')
 

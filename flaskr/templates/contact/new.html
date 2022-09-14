@@ -2,7 +2,7 @@
 
 {% block content %}
   <section class="new">
-    <div class="new__container container">
+    <div class="new__container container grid">
       <div class="new__back">
         <div class="new__back-container">
           <a href="{{ url_for('main.index') }}" class="new__back-btn">
@@ -11,17 +11,18 @@
         </div>
       </div>
       <div class="new__forms">
-        <form action="" method="POST" class="new__form">
+        <form action="" method="POST" class="new__form grid">
           <div class="new__form-header">
             <h3>New Contact</h3>
           </div>
+          <div class="new__form-message"></div>
           {{ form.hidden_tag() }}
           <div class="new__form-inputs">
             {{ form.contact_name.label(class_='new__form-label') }}
             {{ form.contact_name(class_='new__form-input',
                                   autocomplete='off') }}
           </div>
-          <div class="new__form-inputs">
+          <div class="new__form-inputs" id="contactPhoneCont">
             {{ form.contact_phonenumber.label(class_='new__form-label') }}
             {{ form.contact_phonenumber(class_='new__form-input',
                                   autocomplete='off') }}

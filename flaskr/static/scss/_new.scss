@@ -1,0 +1,62 @@
+@use 'utils/colors' as c;
+@use 'utils/mixins' as m;
+
+.new  {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+
+  &__container { row-gap: 2rem; }
+
+  &__back {
+    &-btn {
+      background-color: c.$second-color;
+      color: c.$white-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      font-size: 2rem;
+      border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(0,0,0,.3);
+      user-select: none;
+    }
+  }
+
+  &__form {
+    @include m.form-style('header', 'inputs', 'label', 'input');
+    background-color: c.$white-color;
+
+    &-message {
+      display: none;
+      text-align: center;
+      color: c.$red-color;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    &-inputs {
+      border: 1px solid c.$primary-color;
+      background-color: c.$aux-color;
+    }
+
+    &-label {
+      cursor: auto;
+      color: c.$second-color;
+    }
+
+    &-input {
+      display: block;
+      background-color: c.$aux-color;
+    }
+
+    &-btn {
+      @include m.btn-style(c.$green-color, c.$white-color);
+      outline: none;
+      border: none;
+      padding: .7rem 0;
+      width: 100%;
+    }
+  }
+}
+

@@ -36,6 +36,9 @@ def create_app(config_class=Config):
     from flaskr.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix="/auth")
 
+    from flaskr.contact import bp as contact_bp
+    app.register_blueprint(contact_bp, url_prefix="/contact")
+
     return app
 
 

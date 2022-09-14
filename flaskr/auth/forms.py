@@ -6,26 +6,23 @@ from flaskr.models import User
 
 
 class SignInForm(FlaskForm):
-    username = StringField("Username",
-                           validators=[DataRequired(message="Enter a username")])
-    password = PasswordField("Password",
-                             validators=[DataRequired(message="Enter a password")])
+    username = StringField("Username", validators=[
+        DataRequired(message="Enter a username")])
+    password = PasswordField("Password", validators=[
+        DataRequired(message="Enter a password")])
     remember_me = BooleanField("Remember Me")
     submit = SubmitField("Sign In")
 
 
 class SignUpForm(FlaskForm):
-    username = StringField("Username",
-                           validators=[DataRequired(message="Enter a username"),
-                                       Length(min=5, max=30)])
-    email = StringField("Email",
-                        validators=[DataRequired(message="Enter a email adress"),
-                                    Email()])
-    password = PasswordField("Password",
-                             validators=[DataRequired(message="Enter a password"),
-                                         Length(min=8, max=16)])
-    password_again = PasswordField("Repeat Password",
-                                   validators=[DataRequired(), EqualTo("password")])
+    username = StringField("Username", validators=[
+        DataRequired(message="Enter a username"), Length(min=5, max=30)])
+    email = StringField("Email", validators=[
+        DataRequired(message="Enter a email adress"), Email()])
+    password = PasswordField("Password", validators=[
+        DataRequired(message="Enter a password"), Length(min=8, max=16)])
+    password_again = PasswordField("Repeat Password", validators=[
+        DataRequired(), EqualTo("password")])
     submit = SubmitField("Sign Up")
 
     def validate_username(self, username):

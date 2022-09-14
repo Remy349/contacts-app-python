@@ -237,6 +237,17 @@ ul {
   font-size: 1.3rem;
   color: #113F67;
 }
+.nav__link {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: #113F67;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.nav__link i {
+  font-size: 1.5rem;
+}
 
 /* HOME / SIGN IN */
 .home {

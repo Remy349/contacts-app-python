@@ -18,7 +18,10 @@
           <p>Username: {{ current_user.username }}</p>
           <p>Email: {{ current_user.email }}</p>
           <div class="principal__profile-info_btns">
-            <a class="principal__profile-info_btns_new">
+            <a
+              href="{{ url_for('contact.new') }}"
+              class="principal__profile-info_btns_new"
+            >
               New contact
               <i class='bx bx-add-to-queue'></i>
             </a>

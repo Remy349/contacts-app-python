@@ -36,7 +36,7 @@ class Contact(db.Model):
     __tablename__ = "contact"
     id = db.Column(db.Integer, primary_key=True)
     contact_name = db.Column(db.String(40), nullable=False)
-    contact_phonenumber = db.Column(db.String(20), unique=True, nullable=False)
+    contact_phonenumber = db.Column(db.String(20), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
     def __repr__(self):

@@ -33,4 +33,8 @@ def edit(id):
 
 @bp.route("/delete/<id>", methods=["GET"])
 def delete(id):
-    return "Delete Page!"
+    delete_contact = Contact.query.filter_by(id=id).first()
+    db.session.delete(delete_contact)
+    db.session.commit()
+
+    return redirect(url_for("main.index"))

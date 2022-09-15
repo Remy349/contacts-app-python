@@ -3,7 +3,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
 
 
-class NewContact(FlaskForm):
+class ContactForm(FlaskForm):
     contact_name = StringField("Name", validators=[
         DataRequired(), Length(min=1, max=40)])
     contact_phonenumber = StringField("Phone", validators=[

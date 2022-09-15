@@ -1,7 +1,7 @@
 from flaskr.contact import bp
 from flaskr import db
-from flaskr.contact.forms import NewContact
-from flask import flash, redirect, render_template, url_for
+from flaskr.contact.forms import ContactForm
+from flask import flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_required
 
 from flaskr.models import Contact
@@ -10,7 +10,7 @@ from flaskr.models import Contact
 @bp.route("/new", methods=["GET", "POST"])
 @login_required
 def new():
-    form = NewContact()
+    form = ContactForm()
 
     if form.validate_on_submit():
         contact = Contact(contact_name=form.contact_name.data,
@@ -23,18 +23,41 @@ def new():
 
         return redirect(url_for("main.index"))
 
-    return render_template("contact/new.html", title="New", form=form)
+    return render_template("contact/new.html", title="New", form=form,
+                           text="New")
 
 
 @bp.route("/edit/<id>", methods=["GET", "POST"])
+@login_required
 def edit(id):
-    return "Edit Page!"
+    form = ContactForm()
+
+    edit_contact = Contact.query.filter_by(id=id).first()
+
+    if form.validate_on_submit():
+        edit_contact.contact_name = form.contact_name.data
+        edit_contact.contact_phonenumber = form.contact_phonenumber.data
+
+        db.session.commit()
+
+        flash("Contact successfully edited!")
+
+        return redirect(url_for("main.index"))
+    elif request.method == "GET":
+        form.contact_name.data = edit_contact.contact_name
+        form.contact_phonenumber.data = edit_contact.contact_phonenumber
+
+    return render_template("contact/new.html", title="Edit", form=form,
+                           text="Edit")
 
 
 @bp.route("/delete/<id>", methods=["GET"])
+@login_required
 def delete(id):
     delete_contact = Contact.query.filter_by(id=id).first()
     db.session.delete(delete_contact)
     db.session.commit()
+
+    flash("Contact successfully deleted!")
 
     return redirect(url_for("main.index"))

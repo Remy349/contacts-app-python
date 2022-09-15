@@ -1,5 +1,4 @@
 /* IMPORTS */
-/* SIGN UP */
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 /* IMPORTS */
@@ -523,6 +522,133 @@ ul {
 
 .change-label {
   color: #226597;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 330px) {
+  .principal__contacts-cards_card_btns {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .principal__contacts-cards_card_btns_cont {
+    width: 100%;
+  }
+  .principal__contacts-cards_card_btns_edit, .principal__contacts-cards_card_btns_delete {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 568px) {
+  .signup__forms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .signup__form {
+    width: 70%;
+  }
+  .home__forms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .home__form {
+    width: 70%;
+  }
+  .new__forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .new__form {
+    width: 70%;
+  }
+  .principal__contacts-cards {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+  .principal__contacts-cards_card_btns {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .principal__contacts-cards_card_btns_cont {
+    width: 100%;
+  }
+  .principal__contacts-cards_card_btns_edit, .principal__contacts-cards_card_btns_delete {
+    justify-content: center;
+  }
+  .principal__contacts-empty_image {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .signup__form {
+    width: 55%;
+  }
+  .home__form {
+    width: 55%;
+  }
+  .new__form {
+    width: 55%;
+  }
+  .principal__contacts-empty_container {
+    flex-direction: row;
+  }
+  .principal__contacts-empty_image {
+    width: 40%;
+  }
+  .principal__contacts-empty_message {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    background: linear-gradient(90deg, #F3F9FB 53%, #113F67 0%);
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .signup__form {
+    width: 45%;
+  }
+  .home__container {
+    grid-template-columns: auto 45%;
+  }
+  .home__container-cont {
+    position: relative;
+    top: 7rem;
+    left: 2rem;
+  }
+  .home__container-contTwo {
+    position: relative;
+    top: 2rem;
+  }
+  .home__content-container {
+    text-align: left;
+  }
+  .home__form {
+    width: 70%;
+  }
+  .new__form {
+    width: 45%;
+  }
+  .principal__contacts-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .principal__contacts-cards_card_btns {
+    flex-direction: row;
+  }
+  .principal__contacts-cards_card_btns_cont {
+    width: auto;
+  }
+  .principal__contacts-empty_image {
+    width: 35%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1024px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

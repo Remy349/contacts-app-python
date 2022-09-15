@@ -67,7 +67,7 @@
                   Phone: {{ c.contact_phonenumber }}
                 </p>
                 <div class="principal__contacts-cards_card_btns">
-                  <div>
+                  <div class="principal__contacts-cards_card_btns_cont">
                     <a
                       href="{{ url_for('contact.edit', id=c.id) }}"
                       class="principal__contacts-cards_card_btns_edit"
@@ -76,7 +76,7 @@
                       <i class='bx bxs-edit-alt'></i>
                     </a>
                   </div>
-                  <div>
+                  <div class="principal__contacts-cards_card_btns_cont">
                     <a
                       href="{{ url_for('contact.delete', id=c.id) }}"
                       class="principal__contacts-cards_card_btns_delete"

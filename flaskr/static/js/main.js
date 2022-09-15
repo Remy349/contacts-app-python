@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /* Remove text from logout and just leave icon */
+  const logoutLink = document.querySelector('.logout')
+
+  if (logoutLink && window.innerWidth <= 330) {
+    logoutLink.innerHTML = `
+      <i class='bx bx-log-out'></i>
+    `
+  }
+
   /* Change background color */
   if (window.location.pathname !== "/auth/sign-in") {
     document.body.style.background = '#F3F9FB'

@@ -1,0 +1,171 @@
+@media screen and (max-width: 330px) {
+  .principal {
+    &__contacts {
+      &-cards {
+        &_card {
+          &_btns {
+            flex-direction: column;
+            row-gap: 1rem;
+
+            &_cont { width: 100%; }
+
+            &_edit,
+            &_delete { justify-content: center; }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 568px) {
+  .signup {
+    &__forms {
+      &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &__form { width: 70%; }
+  }
+
+  .home {
+    &__forms {
+      &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &__form { width: 70%; }
+  }
+
+  .new {
+    &__forms {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__form { width: 70%; }
+  }
+
+  .principal {
+    &__contacts {
+      &-cards {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+
+        &_card {
+          &_btns {
+            flex-direction: column;
+            row-gap: 1rem;
+
+            &_cont { width: 100%; }
+
+            &_edit,
+            &_delete { justify-content: center; }
+          }
+        }
+      }
+
+      &-empty {
+        &_image { width: 60%; }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .signup {
+    &__form { width: 55%; }
+  }
+
+  .home {
+    &__form { width: 55%; }
+  }
+
+  .new {
+    &__form { width: 55%; }
+  }
+
+  .principal {
+    &__contacts {
+      &-empty {
+        &_container { flex-direction: row; }
+
+        &_image { width: 40%; }
+
+        &_message { text-align: left; }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body { background: linear-gradient(90deg, #F3F9FB 53%, #113F67 0%); }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .signup {
+    &__form { width: 45%; }
+  }
+
+  .home {
+    &__container {
+      grid-template-columns: auto 45%;
+
+      &-cont {
+        position: relative;
+        top: 7rem;
+        left: 2rem;
+      }
+
+      &-contTwo {
+        position: relative;
+        top: 2rem;
+      }
+    }
+
+    &__content {
+      &-container { text-align: left; }
+    }
+
+    &__form { width: 70%; }
+  }
+
+  .new {
+    &__form { width: 45%; }
+  }
+
+  .principal {
+    &__contacts {
+      &-cards {
+        grid-template-columns: repeat(3, 1fr);
+
+        &_card {
+          &_btns {
+            flex-direction: row;
+
+            &_cont { width: auto; }
+          }
+        }
+      }
+
+      &-empty {
+        &_image { width: 35%; }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container { max-width: 1024px; }
+}
+

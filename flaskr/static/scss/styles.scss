@@ -3,7 +3,6 @@
 @use 'utils/fonts' as f;
 @use 'utils/mixins' as m;
 
-/* SIGN UP */
 @use './signup';
 @use './index';
 @use './new';
@@ -182,4 +181,7 @@ ul { list-style: none; }
 }
 
 .change-label { color: c.$second-color; }
+
+/* RESPONSIVE DESIGN */
+@import './responsive_design';
 

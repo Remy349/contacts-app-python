@@ -3,25 +3,15 @@
 
 .principal {
   margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 
   &__container {
     row-gap: 4rem;
   }
 
   &__message {
-    color: c.$white-color;
-    background-color: c.$green-color;
-    border-radius: .5rem;
-    padding: .7rem .5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 1rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,.3);
+    @include m.messages(c.$white-color, c.$green-color);
     margin-bottom: 3rem;
-    margin-top: -1rem;
-    cursor: default;
 
     &-text { font-size: 1.1rem; }
 
@@ -91,6 +81,31 @@
       &_message {
         text-align: center;
         font-size: 1.1rem;
+      }
+    }
+
+    &-pagination {
+      margin-top: 3rem;
+
+      &_container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      &_left,
+      &_right {
+        background-color: c.$second-color;
+        color: c.$white-color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,.3);
+        width: 50px;
+        height: 50px;
+
+        & i { font-size: 2.2rem; }
       }
     }
 

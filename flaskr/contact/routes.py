@@ -24,3 +24,13 @@ def new():
         return redirect(url_for("main.index"))
 
     return render_template("contact/new.html", title="New", form=form)
+
+
+@bp.route("/edit/<id>", methods=["GET", "POST"])
+def edit(id):
+    return "Edit Page!"
+
+
+@bp.route("/delete/<id>", methods=["GET"])
+def delete(id):
+    return "Delete Page!"

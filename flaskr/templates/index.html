@@ -61,20 +61,26 @@
             {% for c in contacts %}
               <div class="principal__contacts-cards_card">
                 <h3 class="principal__contacts-cards_card_header">
-                  Name: {{ c.contactName }}
+                  Name: {{ c.contact_name }}
                 </h3>
                 <p class="principal__contacts-cards_card_data">
-                  Phone: {{ c.contactPhone }}
+                  Phone: {{ c.contact_phonenumber }}
                 </p>
                 <div class="principal__contacts-cards_card_btns">
                   <div>
-                    <a class="principal__contacts-cards_card_btns_edit">
+                    <a
+                      href="{{ url_for('contact.edit', id=c.id) }}"
+                      class="principal__contacts-cards_card_btns_edit"
+                    >
                       Edit
                       <i class='bx bxs-edit-alt'></i>
                     </a>
                   </div>
                   <div>
-                    <a class="principal__contacts-cards_card_btns_delete">
+                    <a
+                      href="{{ url_for('contact.delete', id=c.id) }}"
+                      class="principal__contacts-cards_card_btns_delete"
+                    >
                       Delete
                       <i class='bx bxs-trash-alt'></i>
                     </a>
@@ -82,6 +88,16 @@
                 </div>
               </div>
             {% endfor %}
+          </div>
+          <div class="principal__contacts-pagination">
+            <div class="principal__contacts-pagination_container">
+              <a href="{{ prev_url or '#' }}" class="principal__contacts-pagination_left">
+                <i class='bx bx-left-arrow-alt'></i>
+              </a>
+              <a href="{{ next_url or '#' }}" class="principal__contacts-pagination_right">
+                <i class='bx bx-right-arrow-alt' ></i>
+              </a>
+            </div>
           </div>
         {% endif %}
       </div>

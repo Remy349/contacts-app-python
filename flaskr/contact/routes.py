@@ -27,7 +27,7 @@ def new():
                            text="New")
 
 
-@bp.route("/edit/<id>", methods=["GET", "POST"])
+@bp.route("/edit/<int:id>", methods=["GET", "POST"])
 @login_required
 def edit(id):
     form = ContactForm()
@@ -51,7 +51,7 @@ def edit(id):
                            text="Edit")
 
 
-@bp.route("/delete/<id>", methods=["GET"])
+@bp.route("/delete/<int:id>", methods=["GET"])
 @login_required
 def delete(id):
     delete_contact = Contact.query.filter_by(id=id).first()

@@ -52,8 +52,7 @@ class User(PaginatedApiMixin, UserMixin, db.Model):
         data = {
             "id": self.id,
             "username": self.username,
-            "contacts": Contact.query.filter_by(user_id=self.id).all(),
-            "contact_count": self.contacts.count(),
+            "contacts_count": self.contacts.count(),
             "_links": {
                 "self": url_for("api.get_user", id=self.id),
                 "avatar": self.avatar()

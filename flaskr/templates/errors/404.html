@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="errors">
+    <div class="errors__container container">
+      <div class="errors__content">
+        <div class="errors__content-image">
+          <img
+            class="errors__content-image_img"
+            src="{{ url_for('static', filename='images/404.png') }}"
+            alt="Page not found image"
+          />
+        </div>
+        <div class="errors__content-info">
+          <p class="errors__content-info_text">
+            Error 404
+            <br/>
+            Page not found!
+          </p>
+          <a
+            href="{{ url_for('main.index') }}"
+            class="errors__content-info_link"
+          >
+            Back
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+

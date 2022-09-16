@@ -77,6 +77,14 @@
       }
     }
   }
+
+  .errors {
+    &__content {
+      &-image {
+        &_img { width: 60%; }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -100,6 +108,14 @@
         &_image { width: 40%; }
 
         &_message { text-align: left; }
+      }
+    }
+  }
+
+  .errors {
+    &__content {
+      &-image {
+        &_img { width: 40%; }
       }
     }
   }
@@ -160,6 +176,14 @@
 
       &-empty {
         &_image { width: 35%; }
+      }
+    }
+  }
+
+  .errors {
+    &__content {
+      &-image {
+        &_img { width: 35%; }
       }
     }
   }

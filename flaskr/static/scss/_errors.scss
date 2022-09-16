@@ -1,0 +1,41 @@
+@use 'utils/colors' as c;
+
+.errors {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+
+    &-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &_img {
+        width: 100%;
+      }
+    }
+
+    &-info {
+      text-align: center;
+
+      &_text {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      &_link {
+        color: c.$primary-color;
+        cursor: pointer;
+        font-size: 1.25rem;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+

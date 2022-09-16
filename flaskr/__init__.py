@@ -39,6 +39,9 @@ def create_app(config_class=Config):
     from flaskr.contact import bp as contact_bp
     app.register_blueprint(contact_bp, url_prefix="/contact")
 
+    from flaskr.errors import bp as errors_bp
+    app.register_blueprint(errors_bp)
+
     return app
 
 

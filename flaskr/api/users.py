@@ -1,17 +1,20 @@
 from flaskr.api import bp
-from flask import jsonify, request, url_for
+from flask import abort, jsonify, request, url_for
 from flaskr import db
 from flaskr.api.errors import bad_request
+from flaskr.api.auth import token_auth
 
 from flaskr.models import User
 
 
 @bp.route("/users/<int:id>", methods=["GET"])
+@token_auth.login_required
 def get_user(id):
     return jsonify(User.query.get_or_404(id).to_dict())
 
 
 @bp.route("/users", methods=["GET"])
+@token_auth.login_required
 def get_users():
     page = request.args.get("page", 1, type=int)
     per_page = min(request.args.get("per_page", 10, type=int), 100)
@@ -46,7 +49,11 @@ def create_user():
 
 
 @bp.route("/users/<int:id>", methods=["PUT"])
+@token_auth.login_required
 def update_user(id):
+    if token_auth.current_user().id != id:
+        abort(403)
+
     user = User.query.get_or_404(id)
     data = request.get_json() or {}
 

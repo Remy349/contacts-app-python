@@ -14,11 +14,6 @@ login_manager.login_message = ""
 def create_app(config_class=Config):
     app = Flask(__name__)
 
-    if config_class.SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
-        config_class.SQLALCHEMY_DATABASE_URI = config_class.SQLALCHEMY_DATABASE_URI.replace(
-            "postgres://", "postgresql://", 1
-        )
-
     if not config_class.SQLALCHEMY_DATABASE_URI:
         raise RuntimeError("DATABASE_URI is not set!")
     else:

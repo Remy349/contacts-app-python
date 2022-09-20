@@ -9,6 +9,7 @@ But not only you can save and have a list of your contacts in this basic CRUD, t
 - [Technologies used in the development](#technologies-used-in-the-development)
 - [How to execute it](#how-to-execute-it)
 - [How to use the API](#how-to-use-the-api)
+- [Image gallery](#image-gallery)
 
 ## Technologies used in the development
 It was developed using Python(3.9.6) and Flask for the development of the server and Postgresql was used as database.
@@ -191,5 +192,13 @@ Content-Type: text/html; charset=utf-8
 Date: Sun, 18 Sep 2022 18:52:45 GMT
 Server: Werkzeug/2.2.2 Python/3.9.6
 ```
+
+## Image gallery
+![PREVIEW1](flaskr/static/preview/contacts-app-python1.png)
+![PREVIEW2](flaskr/static/preview/contacts-app-python2.png)
+![PREVIEW3](flaskr/static/preview/contacts-app-python3.png)
+![PREVIEW4](flaskr/static/preview/contacts-app-python4.png)
+![PREVIEW5](flaskr/static/preview/contacts-app-python5.png)
+![PREVIEW6](flaskr/static/preview/contacts-app-python6.png)
 
 ### Developed by Santiago de Jesús Moraga Caldera - Remy349(GitHub)

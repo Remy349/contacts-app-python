@@ -62,7 +62,7 @@ $ venv\Scripts\activate
 
 SECRET_KEY=yourownsecretkey
 # Connection to the database(Postgresql) example:
-DATABASE_URL=postgres://postgres:mypassword@localhost:5432/database-name
+DATABASE_URL=postgresql://postgres:mypassword@localhost:5432/database-name
 ```
 
 6. Now just run the following commands in the terminal to add the tables to the database and run the server:
